@@ -12,7 +12,13 @@ class App extends Component {
   }
 
   render() {
-    return <div className="app">{console.log(this.state.postsData)}</div>;
+    return (
+      <div className="app">
+        {this.state.postsData.map(post => (
+          <p>{post.username}</p>
+        ))}
+      </div>
+    );
   }
 }
 
