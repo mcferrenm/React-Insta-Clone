@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <div className="app">
         {this.state.postsData.map(post => (
-          <PostContainer post={post} />
+          <PostContainer key={post.timestamp} post={post} />
         ))}
       </div>
     );
