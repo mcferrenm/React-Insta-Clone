@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import CommentSection from "../CommentSection/CommentSection";
+
 const PostContainer = props => {
   return (
     <div className="post-container">
@@ -10,10 +12,11 @@ const PostContainer = props => {
       </div>
       <div className="post-body">
         <img src={props.post.imageUrl} alt="" />
-        <i class="far fa-heart" />
-        <i class="far fa-comment" />
+        <i className="far fa-heart" />
+        <i className="far fa-comment" />
         <span className="likes-count">{props.post.likes}</span>
       </div>
+      <CommentSection comments={props.post.comments} />
     </div>
   );
 };
