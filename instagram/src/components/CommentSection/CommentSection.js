@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 
 import CommentItem from "./CommentItem";
 
+import "./CommentSection.css";
+
 const CommentSection = props => {
   return (
     <div className="comment-section">

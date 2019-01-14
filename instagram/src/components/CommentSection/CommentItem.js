@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 const CommentItem = props => {
   return (
     <div className="comment-item">
-      <span className="user-name">{props.commentItem.username}</span>
-      <span className="user-name">{props.commentItem.text}</span>
+      <span className="username">{props.commentItem.username}</span>
+      <span className="text">{props.commentItem.text}</span>
     </div>
   );
 };
