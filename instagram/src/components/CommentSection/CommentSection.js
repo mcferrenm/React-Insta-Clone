@@ -9,6 +9,7 @@ const CommentSection = props => {
       {props.comments.map(comment => (
         <CommentItem key={comment.text} commentItem={comment} />
       ))}
+      <input type="text" placeholder="Add a comment..." />
     </div>
   );
 };
