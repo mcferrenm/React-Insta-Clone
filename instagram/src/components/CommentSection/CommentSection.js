@@ -1,8 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import CommentItem from "./CommentItem";
+
 const CommentSection = props => {
-  return <div>test</div>;
+  return (
+    <div className="comment-section">
+      {props.comments.map(comment => (
+        <CommentItem key={comment.text} commentItem={comment} />
+      ))}
+    </div>
+  );
 };
 
 CommentSection.propTypes = {
