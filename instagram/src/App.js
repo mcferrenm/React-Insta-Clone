@@ -4,9 +4,15 @@ import dummyData from "./dummy-data";
 import "./App.css";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      postsData: dummyData
+    };
+  }
+
   render() {
-    console.log(dummyData);
-    return <div className="App">test</div>;
+    return <div className="app">{console.log(this.state.postsData)}</div>;
   }
 }
 
