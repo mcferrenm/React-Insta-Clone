@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import PostItem from "./components/PostContainer/PostItem";
+
 import dummyData from "./dummy-data";
 
 import "./App.css";
@@ -15,7 +17,7 @@ class App extends Component {
     return (
       <div className="app">
         {this.state.postsData.map(post => (
-          <p>{post.username}</p>
+          <PostItem key={post.timestamp} post={post} />
         ))}
       </div>
     );
