@@ -17,6 +17,8 @@ const PostContainer = props => {
         <span className="likes-count">{props.post.likes}</span>
       </div>
       <CommentSection comments={props.post.comments} />
+      <span className="time-stamp">{props.post.timestamp}</span>
+      <input type="text" placeholder="Add a comment..." />
     </div>
   );
 };
