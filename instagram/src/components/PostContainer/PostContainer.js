@@ -10,7 +10,6 @@ const PostContainer = props => {
       </div>
       <div className="post-body">
         <img src={props.post.imageUrl} alt="" />
-        {/* Todo Icons */}
         <i class="far fa-heart" />
         <i class="far fa-comment" />
         <span className="likes-count">{props.post.likes}</span>
