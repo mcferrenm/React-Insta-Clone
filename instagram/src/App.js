@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PostItem from "./components/PostContainer/PostItem";
+import PostContainer from "./components/PostContainer/PostContainer";
 
 import dummyData from "./dummy-data";
 
@@ -16,9 +16,7 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        {this.state.postsData.map(post => (
-          <PostItem key={post.timestamp} post={post} />
-        ))}
+        <PostContainer posts={this.state.postsData} />
       </div>
     );
   }
