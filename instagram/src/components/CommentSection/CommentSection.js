@@ -11,7 +11,8 @@ class CommentSection extends React.Component {
 
     this.state = {
       comments: this.props.comments,
-      inputText: ""
+      inputText: "",
+      userName: "mcferrenm"
     };
   }
 
@@ -21,9 +22,15 @@ class CommentSection extends React.Component {
     });
   };
 
-  addNewComment = (event, comment) => {
+  addNewComment = event => {
     event.preventDefault();
-    console.log(comment);
+    this.setState({
+      comments: [
+        ...this.state.comments,
+        { username: this.state.userName, text: this.state.inputText }
+      ],
+      inputText: ""
+    });
   };
 
   render() {
@@ -34,15 +41,14 @@ class CommentSection extends React.Component {
         ))}
         <span className="timestamp">{this.props.post.timestamp}</span>
 
-        <form
-          onSubmit={event => this.addNewComment(event, this.state.inputText)}
-        >
+        <form onSubmit={this.addNewComment}>
           <input
             className="comment-input"
             type="text"
             placeholder="Add a comment..."
-            onChange={event => this.handleChange(event)}
+            onChange={this.handleChange}
             name="inputText"
+            value={this.state.inputText}
           />
         </form>
       </div>
