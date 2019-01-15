@@ -28,18 +28,3 @@
   display: block;
   margin: 0 0 1rem;
 }
-
-.post-container .post-body .timestamp {
-  display: block;
-  margin: 0 0 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid lightgrey;
-  font-size: 1.4rem;
-}
-
-.post-container .comment-input {
-  width: 100%;
-  border: none;
-  font-size: 1.6rem;
-  padding: 1rem 0;
-}

@@ -20,6 +20,13 @@ class CommentSection extends React.Component {
         {this.state.comments.map(comment => (
           <CommentItem key={comment.text} commentItem={comment} />
         ))}
+        <span className="timestamp">{this.props.post.timestamp}</span>
+
+        <input
+          className="comment-input"
+          type="text"
+          placeholder="Add a comment..."
+        />
       </div>
     );
   }
