@@ -10,12 +10,24 @@ class PostContainer extends React.Component {
     super(props);
 
     this.state = {
-      likes: this.props.post.likes
+      likes: this.props.post.likes,
+      isLiked: false
     };
   }
 
-  incrementLikes = event => {
-    console.log(event.target);
+  incrementLikes = () => {
+    // increment this.state.likes only one time, or off one time
+    this.state.isLiked
+      ? this.setState(prevState => ({
+          likes: prevState.likes + 1,
+          isLiked: !prevState.isLiked
+        }))
+      : this.setState(prevState => ({
+          likes: prevState.likes - 1,
+          isLiked: !prevState.isLiked
+        }));
+
+    // change color
   };
 
   render() {
