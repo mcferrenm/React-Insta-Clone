@@ -14,6 +14,10 @@ class PostContainer extends React.Component {
     };
   }
 
+  incrementLikes = event => {
+    console.log(event.target);
+  };
+
   render() {
     return (
       <div className="post-container">
@@ -29,7 +33,7 @@ class PostContainer extends React.Component {
         <img src={this.props.post.imageUrl} alt="" />
 
         <div className="post-body">
-          <i className="far fa-heart" />
+          <i className="far fa-heart" onClick={this.incrementLikes} />
           <i className="far fa-comment" />
 
           <span className="likes-count">{this.state.likes} likes</span>
