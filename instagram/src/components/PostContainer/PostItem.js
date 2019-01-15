@@ -1,5 +1,7 @@
 import React from "react";
 
+import PropTypes from "prop-types";
+
 import CommentSection from "../CommentSection/CommentSection";
 
 import "./PostContainer.css";
@@ -33,6 +35,25 @@ const PostItem = props => {
       </div>
     </div>
   );
+};
+
+PostItem.propTypes = {
+  post: PropTypes.shape({
+    username: PropTypes.string,
+    thumbnailUrl: PropTypes.string,
+    imageUrl: PropTypes.string,
+    like: PropTypes.number,
+    timestamp: PropTypes.string,
+    comments: PropTypes.arrayOf(
+      PropTypes.shape({
+        username: PropTypes.string,
+        text: PropTypes.string
+      })
+    )
+  }),
+  isLiked: PropTypes.bool,
+  incrementLikes: PropTypes.func,
+  likes: PropTypes.number
 };
 
 export default PostItem;
