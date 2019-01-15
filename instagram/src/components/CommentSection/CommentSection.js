@@ -10,9 +10,16 @@ class CommentSection extends React.Component {
     super(props);
 
     this.state = {
-      comments: this.props.comments
+      comments: this.props.comments,
+      inputText: ""
     };
   }
+
+  handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
 
   render() {
     return (
@@ -22,11 +29,15 @@ class CommentSection extends React.Component {
         ))}
         <span className="timestamp">{this.props.post.timestamp}</span>
 
-        <input
-          className="comment-input"
-          type="text"
-          placeholder="Add a comment..."
-        />
+        <form onSubmit={event => this.addNewComment(event)}>
+          <input
+            className="comment-input"
+            type="text"
+            placeholder="Add a comment..."
+            onChange={event => this.handleChange(event)}
+            name="inputText"
+          />
+        </form>
       </div>
     );
   }
