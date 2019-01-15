@@ -16,21 +16,20 @@ class PostContainer extends React.Component {
   }
 
   incrementLikes = () => {
-    // increment this.state.likes only one time, or off one time
     this.state.isLiked
       ? this.setState(prevState => ({
-          likes: prevState.likes + 1,
+          likes: prevState.likes - 1,
           isLiked: !prevState.isLiked
         }))
       : this.setState(prevState => ({
-          likes: prevState.likes - 1,
+          likes: prevState.likes + 1,
           isLiked: !prevState.isLiked
         }));
-
-    // change color
   };
 
   render() {
+    const likedClass = this.state.isLiked ? "fas fa-heart" : "far fa-heart";
+
     return (
       <div className="post-container">
         <div className="post-header">
@@ -45,7 +44,7 @@ class PostContainer extends React.Component {
         <img src={this.props.post.imageUrl} alt="" />
 
         <div className="post-body">
-          <i className="far fa-heart" onClick={this.incrementLikes} />
+          <i className={likedClass} onClick={this.incrementLikes} />
           <i className="far fa-comment" />
 
           <span className="likes-count">{this.state.likes} likes</span>
