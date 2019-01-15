@@ -5,15 +5,25 @@ import CommentItem from "./CommentItem";
 
 import "./CommentSection.css";
 
-const CommentSection = props => {
-  return (
-    <div className="comment-section">
-      {props.comments.map(comment => (
-        <CommentItem key={comment.text} commentItem={comment} />
-      ))}
-    </div>
-  );
-};
+class CommentSection extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      comments: this.props.comments
+    };
+  }
+
+  render() {
+    return (
+      <div className="comment-section">
+        {this.state.comments.map(comment => (
+          <CommentItem key={comment.text} commentItem={comment} />
+        ))}
+      </div>
+    );
+  }
+}
 
 CommentSection.propTypes = {
   comments: PropTypes.arrayOf(
