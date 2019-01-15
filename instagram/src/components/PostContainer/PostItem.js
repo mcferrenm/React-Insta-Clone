@@ -26,7 +26,10 @@ const PostItem = props => {
 
         <span className="likes-count">{props.likes} likes</span>
 
-        <CommentSection post={props.post} comments={props.post.comments} />
+        <CommentSection
+          timestamp={props.post.timestamp}
+          comments={props.post.comments}
+        />
       </div>
     </div>
   );

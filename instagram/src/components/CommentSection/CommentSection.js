@@ -39,7 +39,7 @@ class CommentSection extends React.Component {
         {this.state.comments.map(comment => (
           <CommentItem key={comment.text} commentItem={comment} />
         ))}
-        <span className="timestamp">{this.props.post.timestamp}</span>
+        <span className="timestamp">{this.props.timestamp}</span>
 
         <form onSubmit={this.addNewComment}>
           <input
