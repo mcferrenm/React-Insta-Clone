@@ -21,6 +21,11 @@ class CommentSection extends React.Component {
     });
   };
 
+  addNewComment = (event, comment) => {
+    event.preventDefault();
+    console.log(comment);
+  };
+
   render() {
     return (
       <div className="comment-section">
@@ -29,7 +34,9 @@ class CommentSection extends React.Component {
         ))}
         <span className="timestamp">{this.props.post.timestamp}</span>
 
-        <form onSubmit={event => this.addNewComment(event)}>
+        <form
+          onSubmit={event => this.addNewComment(event, this.state.inputText)}
+        >
           <input
             className="comment-input"
             type="text"
