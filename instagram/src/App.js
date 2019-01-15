@@ -11,7 +11,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      postsData: []
+      postsData: [],
+      searchBarInput: ""
     };
   }
 
@@ -21,10 +22,17 @@ class App extends Component {
     });
   }
 
+  handleChange = event => {
+    console.log(event.target.name, event.target.value);
+  };
+
   render() {
     return (
       <div className="app">
-        <SearchBar />
+        <SearchBar
+          handleChange={this.handleChange}
+          searchBarInput={this.state.searchBarInput}
+        />
         {this.state.postsData.map(post => (
           <PostContainer key={post.timestamp} post={post} />
         ))}
