@@ -23,7 +23,9 @@ class App extends Component {
   }
 
   handleChange = event => {
-    console.log(event.target.name, event.target.value);
+    this.setState({
+      [event.target.name]: event.target.value
+    });
   };
 
   render() {
@@ -33,9 +35,11 @@ class App extends Component {
           handleChange={this.handleChange}
           searchBarInput={this.state.searchBarInput}
         />
-        {this.state.postsData.map(post => (
-          <PostContainer key={post.timestamp} post={post} />
-        ))}
+        {this.state.postsData
+          .filter(post => post.username.includes(this.state.searchBarInput))
+          .map(post => (
+            <PostContainer key={post.timestamp} post={post} />
+          ))}
       </div>
     );
   }
