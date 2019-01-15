@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./PostContainer.css";
+import PostItem from "./PostItem";
 
-import CommentSection from "../CommentSection/CommentSection";
+import "./PostContainer.css";
 
 class PostContainer extends React.Component {
   constructor(props) {
@@ -28,33 +28,13 @@ class PostContainer extends React.Component {
   };
 
   render() {
-    const likedClass = this.state.isLiked ? "fas fa-heart" : "far fa-heart";
-
     return (
-      <div className="post-container">
-        <div className="post-header">
-          <img
-            className="thumbnail"
-            src={this.props.post.thumbnailUrl}
-            alt="User Thumbnail"
-          />
-          <span className="username"> {this.props.post.username}</span>
-        </div>
-
-        <img src={this.props.post.imageUrl} alt="" />
-
-        <div className="post-body">
-          <i className={likedClass} onClick={this.incrementLikes} />
-          <i className="far fa-comment" />
-
-          <span className="likes-count">{this.state.likes} likes</span>
-
-          <CommentSection
-            post={this.props.post}
-            comments={this.props.post.comments}
-          />
-        </div>
-      </div>
+      <PostItem
+        post={this.props.post}
+        isLiked={this.state.isLiked}
+        incrementLikes={this.incrementLikes}
+        likes={this.state.likes}
+      />
     );
   }
 }
