@@ -21,6 +21,7 @@ const Login = props => {
           placeholder="Enter password..."
           value={props.passwordInput}
           onChange={props.handleChange}
+          autoComplete="off"
         />
         <button>Login</button>
       </form>
