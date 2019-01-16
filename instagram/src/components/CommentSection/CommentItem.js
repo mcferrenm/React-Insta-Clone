@@ -10,6 +10,10 @@ const CommentItem = props => {
   );
 };
 
+CommentItem.defaultProps = {
+  commentItem: { username: "anon", text: "loading..." }
+};
+
 CommentItem.propTypes = {
   comment: PropTypes.shape({
     username: PropTypes.string,

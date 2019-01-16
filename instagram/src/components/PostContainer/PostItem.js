@@ -37,6 +37,10 @@ const PostItem = props => {
   );
 };
 
+PostItem.defaultProps = {
+  likes: 0
+};
+
 PostItem.propTypes = {
   post: PropTypes.shape({
     username: PropTypes.string,

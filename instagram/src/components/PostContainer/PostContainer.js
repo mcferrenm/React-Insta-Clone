@@ -28,7 +28,7 @@ class PostContainer extends React.Component {
         }));
   };
 
-  handleDisplayInput = event => {
+  handleDisplayInput = () => {
     this.setState(prevState => ({
       isCommentInputVisable: !prevState.isCommentInputVisable
     }));
