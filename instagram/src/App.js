@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 
 import authenticate from "./components/authenticate/authenticate";
-import PostsPage from "./components/PostsPage/PostsPage";
+import Login from "./components/Login/Login";
+// import PostsPage from "./components/PostsPage/PostsPage";
 
 import dummyData from "./dummy-data";
 import "./App.css";
@@ -29,11 +30,14 @@ class App extends Component {
 
   render() {
     return (
-      <PostsPage
+      <div className="app">
+        <Login />
+        {/* <PostsPage
         postsData={this.state.postsData}
         handleChange={this.handleChange}
         searchBarInput={this.state.searchBarInput}
-      />
+      /> */}
+      </div>
     );
   }
 }
