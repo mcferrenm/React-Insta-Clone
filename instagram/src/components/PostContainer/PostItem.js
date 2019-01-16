@@ -23,7 +23,7 @@ const PostItem = props => {
 
       <div className="post-body">
         <i className={isLikedClass} onClick={props.incrementLikes} />
-        <i className="far fa-comment" />
+        <i className="far fa-comment" onClick={props.handleDisplayInput} />
 
         <span className="likes-count">{props.likes} likes</span>
 

@@ -11,7 +11,8 @@ class PostContainer extends React.Component {
 
     this.state = {
       likes: this.props.post.likes,
-      isLiked: false
+      isLiked: false,
+      isCommentInputVisable: false
     };
   }
 
@@ -27,6 +28,12 @@ class PostContainer extends React.Component {
         }));
   };
 
+  handleDisplayInput = event => {
+    this.setState(prevState => ({
+      isCommentInputVisable: !prevState.isCommentInputVisable
+    }));
+  };
+
   render() {
     return (
       <PostItem
@@ -34,6 +41,7 @@ class PostContainer extends React.Component {
         isLiked={this.state.isLiked}
         incrementLikes={this.incrementLikes}
         likes={this.state.likes}
+        handleDisplayInput={this.handleDisplayInput}
       />
     );
   }
