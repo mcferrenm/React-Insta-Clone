@@ -42,6 +42,7 @@ class PostContainer extends React.Component {
         incrementLikes={this.incrementLikes}
         likes={this.state.likes}
         handleDisplayInput={this.handleDisplayInput}
+        isCommentInputVisable={this.state.isCommentInputVisable}
       />
     );
   }

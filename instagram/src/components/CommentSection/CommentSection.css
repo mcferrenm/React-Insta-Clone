@@ -20,8 +20,15 @@
 }
 
 .comment-section .comment-input {
+  display: none;
   width: 100%;
   border: none;
   font-size: 1.6rem;
   padding: 1rem 0;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.comment-section .open {
+  display: block;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 }

@@ -30,6 +30,7 @@ const PostItem = props => {
         <CommentSection
           timestamp={props.post.timestamp}
           comments={props.post.comments}
+          isCommentInputVisable={props.isCommentInputVisable}
         />
       </div>
     </div>

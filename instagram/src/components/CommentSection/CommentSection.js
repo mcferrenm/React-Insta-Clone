@@ -34,6 +34,9 @@ class CommentSection extends React.Component {
   };
 
   render() {
+    const commentInputStyle = this.props.isCommentInputVisable
+      ? "comment-input open"
+      : "comment-input";
     return (
       <div className="comment-section">
         {this.state.comments.map(comment => (
@@ -43,7 +46,7 @@ class CommentSection extends React.Component {
 
         <form onSubmit={this.addNewComment}>
           <input
-            className="comment-input"
+            className={commentInputStyle}
             type="text"
             placeholder="Add a comment..."
             onChange={this.handleChange}
