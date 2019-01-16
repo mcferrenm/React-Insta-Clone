@@ -12,7 +12,7 @@ class CommentSection extends React.Component {
     this.state = {
       comments: this.props.comments,
       inputText: "",
-      userName: "mcferrenm"
+      userName: localStorage.getItem("username")
     };
   }
 

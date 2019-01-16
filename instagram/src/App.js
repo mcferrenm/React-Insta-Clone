@@ -8,18 +8,12 @@ import dummyData from "./dummy-data";
 import "./App.css";
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       postsData: [],
       searchBarInput: ""
     };
-  }
-
-  componentDidMount() {
-    this.setState({
-      postsData: dummyData
-    });
   }
 
   handleChange = event => {
@@ -28,12 +22,19 @@ class App extends Component {
     });
   };
 
+  componentDidMount() {
+    this.setState({
+      postsData: dummyData
+    });
+  }
+
   render() {
     return (
       <PostsPage
         postsData={this.state.postsData}
         handleChange={this.handleChange}
         searchBarInput={this.state.searchBarInput}
+        handleLogout={this.props.handleLogout}
       />
     );
   }

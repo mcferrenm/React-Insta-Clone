@@ -21,14 +21,25 @@ const authenticate = App => Login =>
       localStorage.setItem("username", this.state.usernameInput);
     };
 
+    handleLogout = () => {
+      localStorage.removeItem("username");
+      this.setState({ isUserLoggedin: false });
+    };
+
     componentDidMount() {
       if (localStorage.getItem("username")) {
         this.setState({ isUserLoggedin: true });
       }
     }
+
     render() {
       if (this.state.isUserLoggedin) {
-        return <App />;
+        return (
+          <App
+            handleChange={this.handleChange}
+            handleLogout={this.handleLogout}
+          />
+        );
       }
       return (
         <Login

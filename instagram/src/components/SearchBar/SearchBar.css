@@ -49,8 +49,13 @@
   width: 33%;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .search-bar .right i {
   margin-left: 3rem;
+}
+
+.search-bar .right .fa-door-open {
+  cursor: pointer;
 }

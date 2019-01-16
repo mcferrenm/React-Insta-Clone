@@ -9,6 +9,7 @@ const PostsPage = props => {
       <SearchBar
         handleChange={props.handleChange}
         searchBarInput={props.searchBarInput}
+        handleLogout={props.handleLogout}
       />
       {props.postsData
         .filter(post => post.username.includes(props.searchBarInput))
