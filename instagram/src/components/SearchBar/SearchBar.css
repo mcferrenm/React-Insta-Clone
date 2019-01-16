@@ -1,9 +1,15 @@
 .search-bar {
   width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
+  padding: 1rem 3rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
 
 .search-bar i {
