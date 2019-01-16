@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 
-import PostContainer from "./components/PostContainer/PostContainer";
-import SearchBar from "./components/SearchBar/SearchBar";
-
+import PostsPage from "./components/PostsPage/PostsPage";
 import dummyData from "./dummy-data";
 
 import "./App.css";
@@ -30,17 +28,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app">
-        <SearchBar
-          handleChange={this.handleChange}
-          searchBarInput={this.state.searchBarInput}
-        />
-        {this.state.postsData
-          .filter(post => post.username.includes(this.state.searchBarInput))
-          .map(post => (
-            <PostContainer key={post.timestamp} post={post} />
-          ))}
-      </div>
+      <PostsPage
+        postsData={this.state.postsData}
+        handleChange={this.handleChange}
+        searchBarInput={this.state.searchBarInput}
+      />
     );
   }
 }
