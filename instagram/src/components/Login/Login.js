@@ -3,11 +3,11 @@ import React from "react";
 import "./Login.css";
 import logo from "../../img/ig-logo.png";
 
-const Login = () => {
+const Login = props => {
   return (
     <div className="login-container">
       <img src={logo} alt="Instagram Logo" />
-      <form className="login-form">
+      <form onSubmit={props.handleLogin} className="login-form">
         <input
           type="text"
           name="usernameInput"

@@ -28,10 +28,14 @@ class App extends Component {
     });
   };
 
+  handleLogin = username => {
+    console.log(123);
+  };
+
   render() {
     return (
       <div className="app">
-        <Login />
+        <Login handleLogin={this.handleLogin} />
         {/* <PostsPage
         postsData={this.state.postsData}
         handleChange={this.handleChange}
