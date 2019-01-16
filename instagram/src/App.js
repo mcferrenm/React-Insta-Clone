@@ -23,8 +23,9 @@ class App extends Component {
   };
 
   componentDidMount() {
+    localStorage.setItem("postsData", JSON.stringify(dummyData));
     this.setState({
-      postsData: dummyData
+      postsData: JSON.parse(localStorage.getItem("postsData"))
     });
   }
 
