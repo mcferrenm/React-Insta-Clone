@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 
+import authenticate from "./components/authenticate/authenticate";
 import PostsPage from "./components/PostsPage/PostsPage";
-import dummyData from "./dummy-data";
 
+import dummyData from "./dummy-data";
 import "./App.css";
 
 class App extends Component {
@@ -36,5 +37,7 @@ class App extends Component {
     );
   }
 }
+
+authenticate(App);
 
 export default App;
