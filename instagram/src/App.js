@@ -12,7 +12,9 @@ class App extends Component {
     super();
     this.state = {
       postsData: [],
-      searchBarInput: ""
+      searchBarInput: "",
+      usernameInput: "",
+      passwordInput: ""
     };
   }
 
@@ -28,14 +30,22 @@ class App extends Component {
     });
   };
 
-  handleLogin = username => {
-    console.log(123);
+  handleLogin = (event, username) => {
+    event.preventDefault();
+    //get username from input
+    // set username to localstorage
+    // set isLoggedIn to true on state?
   };
 
   render() {
     return (
       <div className="app">
-        <Login handleLogin={this.handleLogin} />
+        <Login
+          handleLogin={this.handleLogin}
+          usernameInput={this.state.usernameInput}
+          passwordInput={this.state.passwordInput}
+          handleChange={this.handleChange}
+        />
         {/* <PostsPage
         postsData={this.state.postsData}
         handleChange={this.handleChange}

@@ -12,11 +12,15 @@ const Login = props => {
           type="text"
           name="usernameInput"
           placeholder="Enter username..."
+          value={props.usernameInput}
+          onChange={props.handleChange}
         />
         <input
           type="password"
           name="passwordInput"
           placeholder="Enter password..."
+          value={props.passwordInput}
+          onChange={props.handleChange}
         />
         <button>Login</button>
       </form>
