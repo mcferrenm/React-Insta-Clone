@@ -24,8 +24,9 @@ class CommentSection extends React.Component {
 
   addNewComment = event => {
     event.preventDefault();
+
     localStorage.setItem(
-      "commentsData",
+      `commentsData${this.props.index}`,
       JSON.stringify([
         ...this.state.commentsData,
         { username: this.state.userName, text: this.state.inputText }
@@ -33,15 +34,19 @@ class CommentSection extends React.Component {
     );
 
     this.setState({
-      commentsData: JSON.parse(localStorage.getItem("commentsData")),
+      commentsData: JSON.parse(
+        localStorage.getItem(`commentsData${this.props.index}`)
+      ),
       inputText: ""
     });
   };
 
   componentDidMount() {
-    if (localStorage.getItem("commentsData")) {
+    if (localStorage.getItem(`commentsData${this.props.index}`)) {
       this.setState({
-        commentsData: JSON.parse(localStorage.getItem("commentsData"))
+        commentsData: JSON.parse(
+          localStorage.getItem(`commentsData${this.props.index}`)
+        )
       });
     } else {
       this.setState({

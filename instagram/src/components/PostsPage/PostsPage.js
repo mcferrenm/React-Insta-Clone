@@ -13,8 +13,8 @@ const PostsPage = props => {
       />
       {props.postsData
         .filter(post => post.username.includes(props.searchBarInput))
-        .map(post => (
-          <PostContainer key={post.timestamp} post={post} />
+        .map((post, index) => (
+          <PostContainer key={post.timestamp} post={post} index={index} />
         ))}
     </div>
   );
