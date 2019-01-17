@@ -18,10 +18,20 @@ const PostItemContainer = styled.div`
   .post-body {
     padding: 1rem;
 
-    i {
+    .like-icon,
+    .comment-icon {
       display: inline-block;
       margin: 0 1rem 1rem 0;
-      font-size: 1.6rem;
+      font-size: 2rem;
+      cursor: pointer;
+
+      &:hover {
+        color: grey;
+      }
+
+      &:active {
+        color: lightgrey;
+      }
     }
 
     .likes-count {

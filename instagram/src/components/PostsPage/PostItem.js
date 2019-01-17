@@ -8,7 +8,9 @@ import Username from "../Styles/Reusables/Username";
 import UserThumbnail from "../Styles/Reusables/UserThumbnail";
 
 const PostItem = props => {
-  const isLikedClass = props.isLiked ? "fas fa-heart" : "far fa-heart";
+  const isLikedClass = props.isLiked
+    ? "fas fa-heart like-icon"
+    : "far fa-heart like-icon";
 
   return (
     <PostItemContainer>
@@ -21,7 +23,10 @@ const PostItem = props => {
 
       <div className="post-body">
         <i className={isLikedClass} onClick={props.incrementLikes} />
-        <i className="far fa-comment" onClick={props.handleDisplayInput} />
+        <i
+          className="far fa-comment comment-icon"
+          onClick={props.handleDisplayInput}
+        />
 
         <span className="likes-count">{props.likes} likes</span>
 

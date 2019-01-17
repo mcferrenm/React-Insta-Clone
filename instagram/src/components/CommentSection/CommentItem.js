@@ -1,17 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import CommentItemContainer from "../Styles/Reusables/CommentItemContainer";
+import RemoveCommentBtn from "../Styles/Reusables/RemoveCommentBtn";
+
 const CommentItem = props => {
   return (
-    <div className="comment-item">
+    <CommentItemContainer>
       <span className="username">{props.commentItem.username}</span>
       <span className="text">{props.commentItem.text}</span>
-      <i
-        className="fas fa-times remove-btn"
-        onClick={props.removeComment}
-        name={`${props.commentIndex}`}
-      />
-    </div>
+
+      {props.commentItem.username === props.currentUser && (
+        <RemoveCommentBtn
+          className="fas fa-times"
+          onClick={props.removeComment}
+          name={`${props.commentIndex}`}
+        />
+      )}
+    </CommentItemContainer>
   );
 };
 

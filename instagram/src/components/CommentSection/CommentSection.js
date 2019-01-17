@@ -83,6 +83,7 @@ class CommentSection extends React.Component {
             commentItem={comment}
             removeComment={this.removeComment}
             commentIndex={index}
+            currentUser={this.state.userName}
           />
         ))}
         <span className="timestamp">{this.props.timestamp}</span>
