@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 
 import CommentItem from "./CommentItem";
 
-import "./CommentSection.css";
+import CommentSectionContainer from "../Styles/Reusables/CommentSectionContainer";
+import CommentInput from "../Styles/Reusables/CommentInput";
 
 class CommentSection extends React.Component {
   constructor(props) {
@@ -74,11 +75,8 @@ class CommentSection extends React.Component {
   }
 
   render() {
-    const commentInputStyle = this.props.isCommentInputVisable
-      ? "comment-input open"
-      : "comment-input";
     return (
-      <div className="comment-section">
+      <CommentSectionContainer>
         {this.state.commentsData.map((comment, index) => (
           <CommentItem
             key={`${this.props.index}${comment.text}`}
@@ -90,17 +88,17 @@ class CommentSection extends React.Component {
         <span className="timestamp">{this.props.timestamp}</span>
 
         <form onSubmit={this.addNewComment}>
-          <input
-            className={commentInputStyle}
+          <CommentInput
             type="text"
             placeholder="Add a comment..."
             onChange={this.handleChange}
             name="inputText"
             value={this.state.inputText}
             autoComplete="off"
+            visable={this.props.isCommentInputVisable}
           />
         </form>
-      </div>
+      </CommentSectionContainer>
     );
   }
 }
