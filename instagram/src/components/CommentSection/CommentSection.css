@@ -19,7 +19,7 @@
 
 .comment-section .timestamp {
   display: block;
-  margin: 0 0 1rem;
+  margin: 1rem 0;
   padding-bottom: 1rem;
   border-bottom: 1px solid lightgrey;
   font-size: 1.4rem;
