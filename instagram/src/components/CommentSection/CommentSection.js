@@ -10,7 +10,7 @@ class CommentSection extends React.Component {
     super(props);
 
     this.state = {
-      comments: this.props.comments,
+      commentsData: [],
       inputText: "",
       userName: localStorage.getItem("username")
     };
@@ -24,14 +24,31 @@ class CommentSection extends React.Component {
 
   addNewComment = event => {
     event.preventDefault();
-    this.setState({
-      comments: [
-        ...this.state.comments,
+    localStorage.setItem(
+      "commentsData",
+      JSON.stringify([
+        ...this.state.commentsData,
         { username: this.state.userName, text: this.state.inputText }
-      ],
+      ])
+    );
+
+    this.setState({
+      commentsData: JSON.parse(localStorage.getItem("commentsData")),
       inputText: ""
     });
   };
+
+  componentDidMount() {
+    if (localStorage.getItem("commentsData")) {
+      this.setState({
+        commentsData: JSON.parse(localStorage.getItem("commentsData"))
+      });
+    } else {
+      this.setState({
+        commentsData: this.props.comments
+      });
+    }
+  }
 
   render() {
     const commentInputStyle = this.props.isCommentInputVisable
@@ -39,7 +56,7 @@ class CommentSection extends React.Component {
       : "comment-input";
     return (
       <div className="comment-section">
-        {this.state.comments.map(comment => (
+        {this.state.commentsData.map(comment => (
           <CommentItem key={comment.text} commentItem={comment} />
         ))}
         <span className="timestamp">{this.props.timestamp}</span>
@@ -52,6 +69,7 @@ class CommentSection extends React.Component {
             onChange={this.handleChange}
             name="inputText"
             value={this.state.inputText}
+            autoComplete="off"
           />
         </form>
       </div>
