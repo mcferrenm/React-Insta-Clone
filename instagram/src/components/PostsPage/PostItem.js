@@ -1,47 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
 
 import CommentSection from "../CommentSection/CommentSection";
+
+import PostItemContainer from "../Styles/Reusables/PostItemContainer";
 import Username from "../Styles/Reusables/Username";
 import UserThumbnail from "../Styles/Reusables/UserThumbnail";
-
-const PostContainer = styled.div`
-  max-width: 600px;
-
-  .post-header {
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-
-    .thumbnail {
-      width: 25px;
-      border-radius: 50%;
-      margin-right: 1rem;
-    }
-  }
-
-  .post-body {
-    padding: 1rem;
-
-    i {
-      display: inline-block;
-      margin: 0 1rem 1rem 0;
-      font-size: 1.6rem;
-    }
-
-    .likes-count {
-      display: block;
-      margin: 0 0 1rem;
-    }
-  }
-`;
 
 const PostItem = props => {
   const isLikedClass = props.isLiked ? "fas fa-heart" : "far fa-heart";
 
   return (
-    <PostContainer>
+    <PostItemContainer>
       <div className="post-header">
         <UserThumbnail src={props.post.thumbnailUrl} alt="User Thumbnail" />
         <Username primary>{props.post.username}</Username>
@@ -62,7 +32,7 @@ const PostItem = props => {
           index={props.index}
         />
       </div>
-    </PostContainer>
+    </PostItemContainer>
   );
 };
 

@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
 
 import Header from "../Styles/Reusables/Header";
 import LogoHeader from "../Styles/Reusables/LogoHeader";
 import LogoImage from "../Styles/Reusables/LogoImage";
+
 import logo from "../../img/ig-logo.png";
 
 const SearchBar = props => {

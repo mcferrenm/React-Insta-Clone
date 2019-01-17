@@ -1,6 +1,7 @@
 import React from "react";
 
-import "./Login.css";
+import LoginContainer from "../Styles/Reusables/LoginContainer";
+
 import logo from "../../img/ig-logo.png";
 
 class Login extends React.Component {
@@ -26,7 +27,7 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="login-container">
+      <LoginContainer>
         <img src={logo} alt="Instagram Logo" />
         <form onSubmit={this.handleLogin} className="login-form">
           <input
@@ -47,7 +48,7 @@ class Login extends React.Component {
           />
           <button>Login</button>
         </form>
-      </div>
+      </LoginContainer>
     );
   }
 }
