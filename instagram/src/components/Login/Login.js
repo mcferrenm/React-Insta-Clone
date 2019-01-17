@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "./Login.css";
 import logo from "../../img/ig-logo.png";
@@ -28,6 +29,13 @@ const Login = props => {
       </form>
     </div>
   );
+};
+
+Login.propTypes = {
+  handleChange: PropTypes.func,
+  handleLogin: PropTypes.func,
+  usernameInput: PropTypes.string,
+  passwordInput: PropTypes.string
 };
 
 export default Login;

@@ -20,10 +20,12 @@ CommentItem.defaultProps = {
 };
 
 CommentItem.propTypes = {
-  comment: PropTypes.shape({
+  commentItem: PropTypes.shape({
     username: PropTypes.string,
     text: PropTypes.string
-  })
+  }),
+  removeComment: PropTypes.func,
+  commentIndex: PropTypes.number
 };
 
 export default CommentItem;

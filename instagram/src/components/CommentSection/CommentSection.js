@@ -111,7 +111,10 @@ CommentSection.propTypes = {
       username: PropTypes.string,
       text: PropTypes.string
     })
-  )
+  ),
+  index: PropTypes.number,
+  timestamp: PropTypes.string,
+  isCommentInputVisable: PropTypes.bool
 };
 
 export default CommentSection;

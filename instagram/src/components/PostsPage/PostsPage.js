@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import PostContainer from "./PostContainer";
 import SearchBar from "../SearchBar/SearchBar";
@@ -18,6 +19,27 @@ const PostsPage = props => {
         ))}
     </div>
   );
+};
+
+PostsPage.propTypes = {
+  postsData: PropTypes.arrayOf(
+    PropTypes.shape({
+      username: PropTypes.string,
+      thumbnailUrl: PropTypes.string,
+      imageUrl: PropTypes.string,
+      like: PropTypes.number,
+      timestamp: PropTypes.string,
+      comments: PropTypes.arrayOf(
+        PropTypes.shape({
+          username: PropTypes.string,
+          text: PropTypes.string
+        })
+      )
+    })
+  ),
+  handleChange: PropTypes.func,
+  handleLogout: PropTypes.func,
+  searchBarInput: PropTypes.string
 };
 
 export default PostsPage;

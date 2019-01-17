@@ -58,7 +58,10 @@ PostItem.propTypes = {
   }),
   isLiked: PropTypes.bool,
   incrementLikes: PropTypes.func,
-  likes: PropTypes.number
+  likes: PropTypes.number,
+  handleDisplayInput: PropTypes.func,
+  isCommentInputVisable: PropTypes.bool,
+  index: PropTypes.number
 };
 
 export default PostItem;

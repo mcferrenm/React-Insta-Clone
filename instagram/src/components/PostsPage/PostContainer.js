@@ -62,7 +62,8 @@ PostContainer.propTypes = {
         text: PropTypes.string
       })
     )
-  })
+  }),
+  index: PropTypes.number
 };
 
 export default PostContainer;

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 import authenticate from "./components/authenticate/authenticate";
 import Login from "./components/Login/Login";
@@ -40,5 +41,10 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  handleChange: PropTypes.func,
+  handleLogout: PropTypes.func
+};
 
 export default authenticate(App)(Login);

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "./SearchBar.css";
 import logo from "../../img/ig-logo.png";
@@ -28,6 +29,12 @@ const SearchBar = props => {
       </div>
     </div>
   );
+};
+
+SearchBar.propTypes = {
+  handleChange: PropTypes.func,
+  searchBarInput: PropTypes.string,
+  handleLogout: PropTypes.func
 };
 
 export default SearchBar;
