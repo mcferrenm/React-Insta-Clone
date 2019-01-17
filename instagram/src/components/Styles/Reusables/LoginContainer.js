@@ -28,6 +28,7 @@ const LoginContainer = styled.div`
       border: none;
       border-bottom: 1px solid lightgrey;
       text-align: center;
+      background: #fafafa;
     }
 
     button {
