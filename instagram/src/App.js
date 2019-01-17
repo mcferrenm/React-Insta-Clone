@@ -23,6 +23,11 @@ class App extends Component {
     });
   };
 
+  handleLogout = () => {
+    localStorage.removeItem("username");
+    window.location.reload();
+  };
+
   componentDidMount() {
     localStorage.setItem("postsData", JSON.stringify(dummyData));
     this.setState({
@@ -36,7 +41,7 @@ class App extends Component {
         postsData={this.state.postsData}
         handleChange={this.handleChange}
         searchBarInput={this.state.searchBarInput}
-        handleLogout={this.props.handleLogout}
+        handleLogout={this.handleLogout}
       />
     );
   }

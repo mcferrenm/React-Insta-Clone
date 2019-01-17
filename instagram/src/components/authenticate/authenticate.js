@@ -5,26 +5,9 @@ const authenticate = App => Login =>
     constructor() {
       super();
       this.state = {
-        isUserLoggedin: false,
-        usernameInput: "",
-        passwordInput: ""
+        isUserLoggedin: false
       };
     }
-
-    handleChange = event => {
-      this.setState({
-        [event.target.name]: event.target.value
-      });
-    };
-
-    handleLogin = () => {
-      localStorage.setItem("username", this.state.usernameInput);
-    };
-
-    handleLogout = () => {
-      localStorage.removeItem("username");
-      this.setState({ isUserLoggedin: false });
-    };
 
     componentDidMount() {
       if (localStorage.getItem("username")) {
@@ -34,21 +17,9 @@ const authenticate = App => Login =>
 
     render() {
       if (this.state.isUserLoggedin) {
-        return (
-          <App
-            handleChange={this.handleChange}
-            handleLogout={this.handleLogout}
-          />
-        );
+        return <App />;
       }
-      return (
-        <Login
-          handleLogin={this.handleLogin}
-          usernameInput={this.state.usernameInput}
-          passwordInput={this.state.passwordInput}
-          handleChange={this.handleChange}
-        />
-      );
+      return <Login />;
     }
   };
 

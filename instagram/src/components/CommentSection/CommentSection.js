@@ -47,7 +47,7 @@ class CommentSection extends React.Component {
       JSON.stringify(
         this.state.commentsData.filter(
           (comment, index) =>
-            index !== parseInt(event.target.getAttribute("name"))
+            index !== parseInt(event.target.getAttribute("name"), 10)
         )
       )
     );

@@ -1,41 +1,55 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import "./Login.css";
 import logo from "../../img/ig-logo.png";
 
-const Login = props => {
-  return (
-    <div className="login-container">
-      <img src={logo} alt="Instagram Logo" />
-      <form onSubmit={props.handleLogin} className="login-form">
-        <input
-          type="text"
-          name="usernameInput"
-          placeholder="Enter username..."
-          value={props.usernameInput}
-          onChange={props.handleChange}
-          autoComplete="off"
-        />
-        <input
-          type="password"
-          name="passwordInput"
-          placeholder="Enter password..."
-          value={props.passwordInput}
-          onChange={props.handleChange}
-          autoComplete="off"
-        />
-        <button>Login</button>
-      </form>
-    </div>
-  );
-};
+class Login extends React.Component {
+  constructor(props) {
+    super(props);
 
-Login.propTypes = {
-  handleChange: PropTypes.func,
-  handleLogin: PropTypes.func,
-  usernameInput: PropTypes.string,
-  passwordInput: PropTypes.string
-};
+    this.state = {
+      usernameInput: "",
+      passwordInput: ""
+    };
+  }
+
+  handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+
+  handleLogin = event => {
+    localStorage.setItem("username", this.state.usernameInput);
+    // window.location.reload();
+  };
+
+  render() {
+    return (
+      <div className="login-container">
+        <img src={logo} alt="Instagram Logo" />
+        <form onSubmit={this.handleLogin} className="login-form">
+          <input
+            type="text"
+            name="usernameInput"
+            placeholder="Enter username..."
+            value={this.state.usernameInput}
+            onChange={this.handleChange}
+            autoComplete="off"
+          />
+          <input
+            type="password"
+            name="passwordInput"
+            placeholder="Enter password..."
+            value={this.state.passwordInput}
+            onChange={this.handleChange}
+            autoComplete="off"
+          />
+          <button>Login</button>
+        </form>
+      </div>
+    );
+  }
+}
 
 export default Login;
