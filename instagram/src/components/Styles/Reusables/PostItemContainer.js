@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 const PostItemContainer = styled.div`
   max-width: 600px;
+  margin-bottom: 1rem;
 
   .post-header {
     display: flex;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem 1rem 1.5rem;
 
     .thumbnail {
       width: 25px;

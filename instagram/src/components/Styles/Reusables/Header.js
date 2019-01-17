@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const Header = styled.header`
   width: 100%;
+  min-width: 800px;
   position: fixed;
   top: 0;
   left: 0;
