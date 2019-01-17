@@ -6,6 +6,11 @@ const CommentItem = props => {
     <div className="comment-item">
       <span className="username">{props.commentItem.username}</span>
       <span className="text">{props.commentItem.text}</span>
+      <i
+        className="fas fa-times remove-btn"
+        onClick={props.removeComment}
+        name={`${props.commentIndex}`}
+      />
     </div>
   );
 };

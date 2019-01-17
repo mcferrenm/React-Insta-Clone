@@ -41,6 +41,24 @@ class CommentSection extends React.Component {
     });
   };
 
+  removeComment = event => {
+    localStorage.setItem(
+      `commentsData${this.props.index}`,
+      JSON.stringify(
+        this.state.commentsData.filter(
+          (comment, index) =>
+            index !== parseInt(event.target.getAttribute("name"))
+        )
+      )
+    );
+
+    this.setState({
+      commentsData: JSON.parse(
+        localStorage.getItem(`commentsData${this.props.index}`)
+      )
+    });
+  };
+
   componentDidMount() {
     if (localStorage.getItem(`commentsData${this.props.index}`)) {
       this.setState({
@@ -61,8 +79,13 @@ class CommentSection extends React.Component {
       : "comment-input";
     return (
       <div className="comment-section">
-        {this.state.commentsData.map(comment => (
-          <CommentItem key={comment.text} commentItem={comment} />
+        {this.state.commentsData.map((comment, index) => (
+          <CommentItem
+            key={`${this.props.index}${comment.text}`}
+            commentItem={comment}
+            removeComment={this.removeComment}
+            commentIndex={index}
+          />
         ))}
         <span className="timestamp">{this.props.timestamp}</span>
 

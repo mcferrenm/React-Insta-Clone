@@ -2,13 +2,19 @@
   margin: 0 0 1rem;
 }
 
-.comment-item {
+.comment-section .comment-item {
   margin: 0 0 0.5rem;
+  display: flex;
 }
 
-.comment-item .username {
+.comment-section .comment-item .username {
   margin-right: 1rem;
   font-weight: bold;
+}
+
+.comment-section .comment-item .remove-btn {
+  margin: 0 0 0 auto;
+  color: lightgrey;
 }
 
 .comment-section .timestamp {
