@@ -130,12 +130,15 @@ table {
 
 /* General Styles */
 
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
 * {
   box-sizing: border-box;
 }
 
 html {
   font-size: 62.5%;
+  font-family: "Helvetica", sans-serif;
 }
 
 img {

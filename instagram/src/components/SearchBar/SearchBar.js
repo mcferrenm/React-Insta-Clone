@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-
-import "./SearchBar.css";
 import logo from "../../img/ig-logo.png";
 
 const Header = styled.header`

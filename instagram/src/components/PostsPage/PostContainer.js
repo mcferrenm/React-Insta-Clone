@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 
 import PostItem from "./PostItem";
 
-import "./PostContainer.css";
-
 class PostContainer extends React.Component {
   constructor(props) {
     super(props);
