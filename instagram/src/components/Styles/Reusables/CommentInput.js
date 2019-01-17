@@ -6,6 +6,7 @@ const CommentInput = styled.input`
   border: none;
   font-size: 1.6rem;
   padding: 1rem 0;
+  background: #fafafa;
 
   ${props =>
     props.visable &&

@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import moment from "moment";
 
 import CommentItem from "./CommentItem";
 
@@ -75,6 +76,11 @@ class CommentSection extends React.Component {
   }
 
   render() {
+    const relativeTime = moment(
+      this.props.timestamp,
+      "MMMM Do YYYY, h:mm:ss a"
+    ).fromNow();
+
     return (
       <CommentSectionContainer>
         {this.state.commentsData.map((comment, index) => (
@@ -86,7 +92,7 @@ class CommentSection extends React.Component {
             currentUser={this.state.userName}
           />
         ))}
-        <span className="timestamp">{this.props.timestamp}</span>
+        <span className="timestamp">{relativeTime}</span>
 
         <form onSubmit={this.addNewComment}>
           <CommentInput

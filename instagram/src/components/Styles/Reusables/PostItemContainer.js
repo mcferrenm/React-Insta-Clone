@@ -28,10 +28,6 @@ const PostItemContainer = styled.div`
       &:hover {
         color: grey;
       }
-
-      &:active {
-        color: lightgrey;
-      }
     }
 
     .likes-count {

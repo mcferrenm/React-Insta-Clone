@@ -141,6 +141,10 @@ html {
   font-family: "Helvetica", sans-serif;
 }
 
+body {
+  background: #fafafa;
+}
+
 img {
   max-width: 100%;
   height: auto;
